@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RivallyAI | Outpace Your Competition</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "sans-serif"] },
+          colors: { rivally: { black: "#050505" } },
+          boxShadow: { soft: "0 1px 0 rgba(255,255,255,0.03), 0 12px 30px rgba(0,0,0,0.55)" },
+          animation: { 'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .bg-depth {
+      background: radial-gradient(1100px 500px at 50% 0%, rgba(255, 255, 255, 0.06), transparent 60%),
+        radial-gradient(700px 350px at 30% 20%, rgba(120, 120, 120, 0.08), transparent 65%),
+        radial-gradient(900px 600px at 50% 100%, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 700ms ease, transform 700ms ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-dvh bg-rivally-black text-zinc-100 antialiased bg-depth">
+
+  <header class="reveal mx-auto w-full max-w-6xl px-6 pt-6">
+    <nav class="flex items-center justify-between">
+      <div class="inline-flex items-center gap-2 text-sm font-medium text-zinc-100 select-none">
+        <span class="grid size-9 place-items-center overflow-hidden">
+          <img src="./assets/app-logo.svg" alt="RivallyAI logo" class="h-8 w-8 object-contain" />
+        </span>
+        <span class="tracking-tight">RivallyAI</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://x.com/PromptStudio1" target="_blank"
+          class="text-sm text-zinc-400 hover:text-white transition-colors">Contact</a>
+        <a href="https://x.com/PromptStudio1" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
+          <svg viewBox="0 0 24 24" class="size-4 fill-current">
+            <path
+              d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.154h7.594l5.243 6.93 6.064-6.93Zm-1.29 19.49h2.04L6.486 3.243H4.298L17.61 20.643Z" />
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto w-full max-w-6xl px-6">
+    <section class="pt-24 pb-16 text-center">
+      <h1 class="reveal mx-auto max-w-3xl text-4xl md:text-6xl font-semibold tracking-tight leading-tight"
+        style="transition-delay: 40ms">
+        Outpace your competition with AI-driven insights.
+      </h1>
+      <p class="reveal mx-auto mt-6 max-w-xl text-zinc-400 text-lg" style="transition-delay: 120ms">
+        Real-time competitor tracking powered by AI.
+      </p>
+
+      <form id="waitlist-form" class="reveal mx-auto mt-10 flex max-w-lg flex-col gap-3 sm:flex-row"
+        style="transition-delay: 200ms">
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Enter Your Email" required
+          class="h-12 w-full flex-1 rounded-md border border-zinc-800 bg-zinc-950/60 px-4 text-sm outline-none focus:border-zinc-500 transition shadow-soft" />
+        <button id="submit-btn" type="submit"
+          class="h-12 w-full sm:w-auto shrink-0 rounded-md bg-white px-6 text-sm font-semibold text-black hover:bg-zinc-200 transition active:scale-95 disabled:opacity-50">
+          Sign Up for Early Access
+        </button>
+      </form>
+      <p id="form-status" class="reveal mt-4 text-xs min-h-[1.25rem]" style="transition-delay: 260ms"></p>
+    </section>
+
+    <section class="reveal py-20 border-t border-zinc-800/50">
+      <h2 class="reveal text-3xl font-semibold mb-12" style="transition-delay: 40ms">Why Rivally?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="space-y-6">
+          <div class="reveal p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30 shadow-soft"
+            style="transition-delay: 80ms">
+            <h3 class="font-semibold text-lg">Competitive Intelligence</h3>
+            <p class="mt-4 text-zinc-400 leading-relaxed">
+              Stop manual checking. RivallyAI autonomously tracks your competitors' every move (from pricing pivots to
+              feature launches) in real-time.
+            </p>
+          </div>
+          <div class="reveal p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30 shadow-soft"
+            style="transition-delay: 160ms">
+            <h3 class="font-semibold text-lg">Automated Gap Analysis</h3>
+            <p class="mt-4 text-zinc-400 leading-relaxed">
+              Turn their weakness into your wealth. Identify loopholes in competitor sites and user experiences so you
+              can fill the void and win the market.
+            </p>
+          </div>
+        </div>
+        <div class="space-y-6 md:mt-12">
+          <div class="reveal p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30 shadow-soft"
+            style="transition-delay: 240ms">
+            <h3 class="font-semibold text-lg">Intelligent Insights</h3>
+            <p class="mt-4 text-zinc-400 leading-relaxed">
+              Don't just see changes; understand them. Our AI decodes the "why" behind competitor updates, predicting
+              their strategy before they even announce it.
+            </p>
+          </div>
+          <div class="reveal p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30 shadow-soft"
+            style="transition-delay: 320ms">
+            <h3 class="font-semibold text-lg">No Noise. Only Signals</h3>
+            <p class="mt-4 text-zinc-400 leading-relaxed">
+              Get instantly notified when a “real” change is occurred. Rivally is specifically trained on this to filter
+              signals from noise.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="reveal mx-auto w-full max-w-6xl px-6 py-12 border-t border-zinc-800/50">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="grid size-8 place-items-center rounded-md overflow-hidden">
+            <img src="./assets/app-logo.svg" alt="RivallyAI logo" class="h-8 w-8 object-contain" />
+          </span>
+          <span class="font-bold">RivallyAI</span>
+        </div>
+        <p class="text-zinc-500 text-sm">© <span id="year"></span> RivallyAI. All rights reserved.</p>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-zinc-400">
+        <div class="flex items-center gap-2">
+          <span class="size-2 bg-emerald-500 rounded-full animate-pulse-slow"></span>
+          <span>System Operational</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="success-toast"
+    class="fixed top-6 left-1/2 -translate-x-1/2 z-50 hidden bg-emerald-600 text-white px-6 py-3 rounded-full shadow-xl transition-all">
+    Successfully joined the waitlist!
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    (function () {
+      const els = Array.from(document.querySelectorAll(".reveal"));
+      if (!els.length) return;
+      const show = (el) => el.classList.add("is-visible");
+      if (!("IntersectionObserver" in window)) {
+        els.forEach(show);
+        return;
+      }
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            show(entry.target);
+            io.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+      );
+      els.forEach((el) => io.observe(el));
+    })();
+
+    const SUPABASE_URL = "https://qkhawumnwvyzauqcsyxt.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_gKXa7Deqj4eqF29CSa6mvg_k4ip5jq2";
+    const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
+    const form = document.getElementById("waitlist-form");
+    const emailInput = document.getElementById("email");
+    const submitBtn = document.getElementById("submit-btn");
+    const statusEl = document.getElementById("form-status");
+    const toast = document.getElementById("success-toast");
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = emailInput.value.trim().toLowerCase();
+      statusEl.textContent = "";
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Joining...";
+
+      if (!supabaseClient) {
+        statusEl.textContent = "Signup is temporarily unavailable.";
+        statusEl.style.color = "#fda4af";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Sign Up for Early Access";
+        return;
+      }
+
+      try {
+        const { error } = await supabaseClient.from("waitlist").insert([{ email }]);
+        if (error) throw error;
+        toast.classList.remove("hidden");
+        form.reset();
+        setTimeout(() => toast.classList.add("hidden"), 3000);
+      } catch (err) {
+        const msg = err?.message?.includes("unique") ? "You're already on the list!" : "Signup failed.";
+        statusEl.textContent = msg;
+        statusEl.style.color = "#fda4af";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Sign Up for Early Access";
+      }
+    });
+  </script>
+</body>
+
+</html>
